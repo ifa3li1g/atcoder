@@ -4,13 +4,14 @@ int main(void) {
   int A, B;
   scanf("%d %d", &A, &B);
 
-  int ol = 1, cnt = 0;
-  while (ol < B) {
-    ol = ol + A - 1;
-    cnt++;
+  int n_outlet = 1, count = 0;
+  while (n_outlet < B) {
+    n_outlet--;
+    n_outlet += A;
+    count++;
   }
 
-  printf("%d\n", cnt);
+  printf("%d\n", count);
 
   return 0;
 }
