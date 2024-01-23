@@ -3,25 +3,25 @@
 int main(void) {
   int i, p;
 
-  int N;
-  scanf("%d", &N);
+  int n;
+  scanf("%d", &n);
 
-  int X[N+1];
-  for (i=0; i<N; i++) scanf("%d", &X[i]);
+  int x[n+1];
+  for (i=0; i<n; i++) scanf("%d", &x[i]);
 
-  int max = X[0], min = X[0];
-  for (i=0; i<N; i++) {
-    if (max < X[i]) max = X[i];
-    if (min > X[i]) min = X[i];
+  int l = x[0], r = x[0];
+  for (i=0; i<n; i++) {
+    if (l > x[i]) l = x[i];
+    if (r < x[i]) r = x[i];
   }
 
-  int cst, cst_min = 10e9;
-  for (p=min; p<=max; p++) {
-    for (i=0, cst=0; i<N; i++) cst += (X[i]-p)*(X[i]-p);
-    if (cst_min > cst) cst_min = cst;
+  int cost, cost_min = 10e6;
+  for (p=l; p<=r; p++) {
+    for (cost=0, i=0; i<n; i++) cost += (x[i]-p)*(x[i]-p);
+    if (cost_min > cost) cost_min = cost;
   }
 
-  printf("%d\n", cst_min);
+  printf("%d\n", cost_min);
 
   return 0;
 }
