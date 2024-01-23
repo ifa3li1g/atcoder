@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 int main(void) {
-  int A, B;
-  scanf("%d %d", &A, &B);
+  int a, b;
+  scanf("%d %d", &a, &b);
 
   int n_outlet = 1, count = 0;
-  while (n_outlet < B) {
+  while (n_outlet < b) {
     n_outlet--;
-    n_outlet += A;
+    n_outlet += a;
     count++;
   }
 
